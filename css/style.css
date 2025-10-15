@@ -1,0 +1,484 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    /* ===== Logo na Text kwa Hero Section ===== */
+.hero .logo {
+  position: absolute;  /* ili iwe juu ya video background */
+  top: 31px;           /* nafasi kutoka juu */
+  left: 31px;          /* nafasi kutoka kushoto */
+  display: flex;       /* mstari mmoja kwa logo na maandishi */
+  align-items: center; /* katikati kwa urefu */
+  gap: 10px;           /* nafasi kati ya logo na maandishi */
+  z-index: 10;         /* iwe juu ya video */
+}
+
+.hero .logo img {
+  width: 88px;         /* ukubwa wa logo */
+  height: auto;
+}
+
+.hero .logo .logo-text {
+  font-size: 55px;     /* ukubwa wa maandishi */
+  font-weight: bold;
+  color: white;        /* rangi ya maandishi */
+}
+
+/* ===== Responsive kwa simu ndogo ===== */
+@media (max-width: 768px) {
+  .hero .logo {
+    top: 25px;
+    left: 25px;
+  }
+
+  .hero .logo img {
+    width: 69px;
+  }
+
+  .hero .logo .logo-text {
+    font-size: 31px;
+  }
+}
+
+
+    /* Desktop navbar */
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      padding: 20px 50px;
+      z-index: 2;
+    }
+
+    .navbar > a, 
+    .dropdown > a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 8px 12px;
+    }
+    .navbar a:hover {
+      color: rgba(255, 148, 0, 0.76);
+    }
+
+    /* Dropdown desktop */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: rgba(0,0,0,0.95);
+      min-width: 180px;
+      top: 100%;
+      left: 0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px;
+      display: block;
+      border-bottom: 1px solid #333;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: #000000;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      z-index: 1001;
+    }
+
+    /* Mobile navbar */
+    .navbar-mobile {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      width: 250px;
+      height: 100vh;
+      padding-top: 80px;
+      transform: translateX(100%);
+      transition: transform 0.4s ease-in-out;
+      z-index: 1000;
+    }
+    .navbar-mobile.open {
+      transform: translateX(0);
+    }
+
+    .navbar-mobile a,
+    .navbar-mobile .submenu-toggle {
+      color: white;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      display: block;
+    }
+    .navbar-mobile a:hover {
+      background: rgba(72, 62, 189, 0.49);
+    }
+
+    /* Mobile submenu */
+    .dropdown-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .submenu {
+      display: none;
+      flex-direction: column;
+      background: #222;
+    }
+    .submenu a {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+    .dropdown-mobile.open .submenu {
+      display: flex;
+    }
+
+/* ==== FIXES ZA MOBILE VIEW ==== */
+
+/* Zuia kitu chochote kisitoke nje ya screen */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Rekebisha header kwenye simu */
+header {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  nav {
+    width: 100%;
+    background: #0a0a0a;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+  }
+}
+/* ===== VIDEO BACKGROUND ===== */
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6); /* inapunguza mwangaza wa video kidogo */
+    }
+/* About Section */
+.about {padding:80px 20px; background:#5ebd3e; text-align:center;}
+.about h2 {font-size:32px; font-family:'Playfair Display',serif;}
+.line {width:80px; height:4px; background:#5ebd3e; margin:10px auto 20px; border-radius:2px;}
+.read-more-btn {
+  display:inline-block; margin-top:20px; padding:12px 28px;
+  background:#613ebd; color:white; border-radius:30px; font-weight:600;
+}
+.read-more-btn:hover {background:#3a7d42;}
+
+    /* Hero text */
+    .hero-text {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 40px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+.hero-text h1 {
+  text-align: center;
+  font-size: 69px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.hero-text p {
+  text-align: center;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    /* Mistari chini */
+    .hero-decor {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 11px;
+    }
+
+    .hero-decor span {
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #5ebd3e;
+      border-radius: 5px;
+      animation: wave 2s infinite ease-in-out;
+    }
+
+    .hero-decor span:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: scaleX(1) rotate(0deg); }
+      50% { transform: scaleX(1.2) rotate(3deg); }
+    }
+
+    /* Socials desktop */
+    .socials {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 2;
+    }
+    .socials a {
+      color: black;
+      background: white;
+      padding: 11px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 16px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .socials a:hover {
+      background: #1e00ff;
+      color: white;
+      transform: scale(1.2);
+    }
+
+    /* Arrow */
+    .arrow {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      color: white;
+      animation: bounce 2s infinite;
+      z-index: 2;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 768px) {
+      .navbar { display: none; }
+      .menu-toggle { display: block; }
+
+      .socials {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .hero-text {
+        text-align: center;
+        top: 31%;
+      }
+      
+      .hero-text h1 {
+        text-align: center;
+        font-size: 222%;
+        font-family: 'Playfair Display',serif;
+      }
+      
+      .hero-text p {
+        text-align: center;
+        font-size: 69%;
+        color: forestgreen;
+      }
+    }
+
+
+/* ===== FOOTER STYLING ===== */
+.footer {
+  background: #0a0a0a;
+  color: #f1f1f1;
+  padding: 60px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: #ff4757;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+  margin: auto;
+  
+}
+
+.footer p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 18px;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff4757;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.footer-bottom a {
+  color: #ff4757;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-col h4::after {
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+}

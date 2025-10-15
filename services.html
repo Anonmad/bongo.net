@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services.bongo.Network</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/png" href="img/beats-electronics-logo.png">
+
+    <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #fd79a8;
+            --success: #00b894;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .service-features {
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pricing-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 4rem 0;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            padding: 1.5rem;
+        }
+        
+        .pricing-features li {
+            list-style: none;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-footer {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 2.5rem;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonials {
+            padding: 4rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content h2::after {
+            background: var(--accent);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .cta-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .cta-btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .cta-btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    /* ===== HERO SECTION ===== */
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: visible;
+            
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+            background-position: center;
+            overflow: visible;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+/* Overlay ya kivuli upande wa kushoto */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin-left: 31px;
+  top: 44%;
+}
+
+/* Heading kuu */
+.hero h1 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #f8b400; /* rangi ya njano */
+}
+
+/* Neno maalum */
+.hero h1 span {
+  color: #ffffff;
+}
+
+/* Subtitle */
+.hero p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #eaeaea;
+}
+
+/* Mstari wa mapambo */
+.hero .underline {
+  margin-top: 10px;
+  height: 4px;
+  width: 150px;
+  background: #f8b400;
+  border-radius: 2px;
+}
+
+/* ===== Animation ===== */
+.hero h1, 
+.hero p, 
+.hero .underline {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+}
+
+.hero p { animation-delay: 0.5s; }
+.hero .underline { animation-delay: 1s; }
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+        /* ===== VIDEO BACKGROUND ===== */
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.8); /* inapunguza mwangaza wa video kidogo */
+    }
+        
+    /* ===== FOOTER STYLING ===== */
+.footer {
+  background: #0a0a0a;
+  color: #f1f1f1;
+  padding: 60px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: #ff4757;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+  margin: auto;
+  
+}
+
+.footer p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 18px;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff4757;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.footer-bottom a {
+  color: #ff4757;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-col h4::after {
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- ===== VIDEO BACKGROUND ===== -->
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd/develop%20(3).mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 style="font-family: 'Playfair Display',serif; font-size: 69px;">Services</h1>
+            <p style="font-family: ''">Cutting-edge solutions tailored to your business needs</p>
+            <div class="underline"></div>
+        </div>
+    </section>
+    
+    <section class="container">
+        <div class="intro-text">
+            <h2>Transforming Businesses with Technology</h2>
+            <p>At Deep Tech Plus, we deliver innovative solutions that drive growth, efficiency, and competitive advantage. Our comprehensive services are designed to meet the unique challenges of the digital age.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>🤖</span>
+                </div>
+                <div class="service-content">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Harness the power of artificial intelligence to automate processes, gain insights from data, and create intelligent applications.</p>
+                    
+                    <div class="service-features">
+                        <li>Custom AI model development</li>
+                        <li>Predictive analytics</li>
+                        <li>Natural language processing</li>
+                        <li>Computer vision solutions</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>🌐</span>
+                </div>
+                <div class="service-content">
+                    <h3>Web Development</h3>
+                    <p>Beautiful, responsive websites and web applications that deliver exceptional user experiences and drive conversions.</p>
+                    
+                    <div class="service-features">
+                        <li>Custom website development</li>
+                        <li>E-commerce solutions</li>
+                        <li>Progressive Web Apps</li>
+                        <li>CMS integration</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>📱</span>
+                </div>
+                <div class="service-content">
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications that engage users and deliver measurable business results.</p>
+                    
+                    <div class="service-features">
+                        <li>iOS & Android development</li>
+                        <li>React Native apps</li>
+                        <li>UI/UX design</li>
+                        <li>App store optimization</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>📊</span>
+                </div>
+                <div class="service-content">
+                    <h3>Data Analytics</h3>
+                    <p>Turn your data into actionable insights with our powerful analytics solutions and business intelligence tools.</p>
+                    
+                    <div class="service-features">
+                        <li>Data visualization</li>
+                        <li>Big data solutions</li>
+                        <li>Dashboard development</li>
+                        <li>Data warehouse setup</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>🔒</span>
+                </div>
+                <div class="service-content">
+                    <h3>Cybersecurity</h3>
+                    <p>Protect your digital assets with our comprehensive security assessments and enterprise-grade protection solutions.</p>
+                    
+                    <div class="service-features">
+                        <li>Vulnerability assessments</li>
+                        <li>Penetration testing</li>
+                        <li>Security monitoring</li>
+                        <li>Compliance consulting</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <span>☁️</span>
+                </div>
+                <div class="service-content">
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable, secure cloud infrastructure and services to power your business growth and digital transformation.</p>
+                    
+                    <div class="service-features">
+                        <li>Cloud migration</li>
+                        <li>Serverless architecture</li>
+                        <li>DevOps automation</li>
+                        <li>Multi-cloud management</li>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Flexible Pricing Plans</h2>
+            <p class="intro-text">Choose the perfect plan for your business needs. All plans include 24/7 support and regular updates.</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Ideal for small businesses</p>
+                        <div class="price">$99<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Up to 5 users</li>
+                        <li>Basic analytics</li>
+                        <li>Email support</li>
+                        <li>10GB storage</li>
+                        <li>Monthly reports</li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="popular-tag">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p>Perfect for growing teams</p>
+                        <div class="price">$299<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Up to 20 users</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>100GB storage</li>
+                        <li>Weekly reports</li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>For large organizations</p>
+                        <div class="price">$899<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited users</li>
+                        <li>Premium analytics</li>
+                        <li>24/7 dedicated support</li>
+                        <li>1TB storage</li>
+                        <li>Custom reporting</li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p class="intro-text">Don't just take our word for it. Here's what our clients have to say about working with us.</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Deep Tech Plus transformed our e-commerce platform with their AI recommendations. Our conversion rates increased by 35% within the first month of implementation.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="img/enhanced-imageog.png" alt="Client">
+                        <div class="author-info">
+                            <h4>Lisa Wang</h4>
+                            <p>CEO, ShopEase</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The mobile app developed by Deep Tech Plus has been instrumental in growing our user base. Their attention to UX detail is exceptional.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="img/enhanced-imageog.png" alt="Client">
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <p>CTO, FitTrack</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Their cybersecurity team identified vulnerabilities we didn't even know existed. Now we sleep better knowing our data is secure.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="img/enhanced-imageog.png" alt="Client">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>IT Director, FinSecure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Whether you're looking to launch a new product, optimize operations, or secure your digital assets, our team is ready to help you achieve your goals.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn cta-btn">Get a Free Consultation</a>
+                    <a href="#" class="btn cta-btn-outline">View Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Brand / Logo -->
+    <div class="footer-col brand">
+      <img src="img/beats-electronics-logo.png" alt="Logo" class="footer-logo">
+        <p><i>FROM CODE TO CREATION - BRINGING YOUR DIGITAL DREAMS TO LIFE!</i></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://anonmad.github.io/bongo.ai/">bongo.ChatGpt</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://anonmad.github.io/bongo.porto/">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Help Center</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1BDzToVFAG/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/addlist/kmMW8Emuw9YzNTM0"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/message/SODIKJBXAM7XL1?src=qr"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@anonmad.network?_t=ZM-90WsPf0qVPk&_r=1"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p><b>© 2025 Anonmad Network Tanzania.</b> <i>All Rights Reserved.</i></p>
+    <p>Designed with ❤️ by <a href="https://github.com/Anonmad/">Anonmad_Tech.</a></p>
+  </div>
+</footer>
+</body>
+</html>
