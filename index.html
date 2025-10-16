@@ -82,29 +82,559 @@
     </video>
     </div>
   </header>
-         <!-- About Section -->
-  <section class="about">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <div class="line"></div>
+  <!-- About Me Section -->
+<section class="about-section">
+  <video class="about-video-bg" autoplay muted loop playsinline>
+    <source src="vd/develop%20(4).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="about-overlay"></div>
+
+  <div class="about-container">
+    <h2 class="about-title">About Me</h2>
+
+    <div class="about-card">
       <p>
-        <b>Mimi ni mtaalam wa teknolojia namiliki ujuzi wa kina katika:</b><br><br>
-
-          &#9679; 🔧 Uundaji wa Tovuti (Website Creation)<br><br>
-
-          &#9679; 💻 Maendeleo ya Tovuti (Web Development)<br><br>
-
-          &#9679; 🎨 Ubunifu wa Michoro (Graphics Design)<br><br>
-
-          &#9679; 🔐 Usalama wa Mtandao na Hacking<br><br>
-
-          &#9679; ⚡ Suluhisho za IT<br><br>
-
-          &#9679; 🤖 Mfumo wa UIT<br><br>
+        I’m a passionate <strong>Web Developer</strong>, <strong>AI Enthusiast</strong>, 
+        and technology innovator driven by the goal of building smart, functional, 
+        and visually engaging digital experiences. Since 2023, I’ve been working 
+        under the umbrella of <a href="https://github.com/Anonmad/" target="_blank" rel="noopener noreferrer"><strong>Anonmad Network</strong></a> — developing web systems, 
+        digital platforms, and AI-based tools that transform how people and 
+        businesses interact with technology.
       </p>
-      <a href="about.html" class="read-more-btn">Read More</a>
+
+      <p>
+        My focus is on blending design with logic — creating websites, dashboards, 
+        and intelligent applications that are not only beautiful but purposeful. 
+        I’m also the creator and visionary behind 
+        <a href="https://anonmad.github.io/bongo.ai/" target="_blank" rel="noopener noreferrer"><strong>Bongo.Ai</strong></a>, 
+        a Tanzanian-born AI project built to inspire creativity and innovation 
+        across East Africa and beyond.
+      </p><br>
+      <!-- Read More Button (Updated z-index) -->
+<a href="about.html" class="readmore-btn" target="_blank" rel="noopener noreferrer">Read More</a>
+
+<style>
+.readmore-btn {
+  position: relative; /* crucial for stacking above overlays */
+  z-index: 10; /* make sure it's above video/overlay */
+  display: inline-block;
+  background-color: #ffffff;
+  color: #00a67e;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,166,126,0.3);
+}
+
+.readmore-btn:hover {
+  background-color: #00a67e;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,166,126,0.5);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .readmore-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+}
+</style>
     </div>
-  </section>
+
+    <!-- My Skills / Expertise Section -->
+    <div class="skills-section">
+      <h3 class="skills-title">My Skills & Expertise</h3>
+
+      <div class="skills-grid">
+        <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+        <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+        <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="skill-item"><i class="fab fa-php"></i><span>PHP</span></div>
+        <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
+        <div class="skill-item"><i class="fas fa-brain"></i><span>Artificial Intelligence</span></div>
+        <div class="skill-item"><i class="fas fa-database"></i><span>MySQL / Databases</span></div>
+        <div class="skill-item"><i class="fas fa-cloud"></i><span>Cloud Integration</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<!-- Styles -->
+<style>
+:root {
+  --accent: #00a67e;
+}
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.about-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.45) contrast(1.1);
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,166,126,0.15), rgba(0,0,0,0.5));
+  z-index: 2;
+}
+
+.about-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-card {
+  background: rgba(3,6,8,0.45);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(2,6,10,0.6);
+}
+
+.about-card p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  color: #e9f7f3;
+  font-size: 1.03rem;
+}
+
+.about-card p strong {
+  color: var(--accent);
+}
+
+.about-card a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-card a:hover {
+  text-decoration: underline;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 166, 126, 0.2);
+}
+
+.skill-item i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.skill-item span {
+  display: block;
+  font-size: 0.95rem;
+  color: #e9f7f3;
+}
+
+@media (max-width: 720px) {
+  .about-section { padding: 48px 16px; }
+  .about-title { font-size: 1.5rem; }
+  .about-card { padding: 20px; }
+  .about-card p { font-size: 0.98rem; }
+}
+</style>
+<!-- My Vision Section -->
+<section class="vision-section">
+  <div class="vision-container">
+    <h2 class="vision-title">My Vision</h2>
+    <p>
+      My vision is to lead a generation of young innovators in East Africa 
+      through technology, creativity, and artificial intelligence. I believe 
+      that Africa holds immense potential — and by equipping youth with the 
+      right digital tools, we can shape a smarter, self-sustaining, and 
+      connected future.
+    </p>
+
+    <p>
+      Through projects like <a href="https://anonmad.github.io/bongo.ai/" target="_blank" rel="noopener noreferrer"><strong>Bongo.Ai</strong></a> and various web-based 
+      solutions, my goal is to inspire the next wave of creators, developers, 
+      and thinkers who will use technology not just as a tool, but as a bridge 
+      to new opportunities, education, and empowerment across the continent.
+    </p>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+:root {
+  --accent: #00a67e;
+  --dark: #081017;
+  --light: #eafcf8;
+}
+
+/* My Vision Section */
+.vision-section {
+  position: relative;
+  background: linear-gradient(135deg, #061c27 0%, #0a332b 50%, #0d1f16 100%);
+  color: var(--light);
+  padding: 80px 20px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.vision-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,166,126,0.25), transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+}
+
+.vision-section::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,166,126,0.15), transparent 70%);
+  filter: blur(70px);
+  z-index: 1;
+}
+
+.vision-container {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 4px solid var(--accent);
+  padding: 40px 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px rgba(0,166,126,0.12);
+}
+
+.vision-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.vision-container p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--light);
+  margin-bottom: 18px;
+}
+
+.vision-container strong {
+  color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 720px) {
+  .vision-container {
+    padding: 28px 22px;
+  }
+
+  .vision-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .vision-container p {
+    font-size: 0.98rem;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- Join My Vision CTA -->
+<div class="vision-cta">
+  <h3 class="cta-title">Join My Vision</h3>
+  <p>Be part of the next wave of innovators and help shape the future of technology in East Africa.</p>
+  <a href="contact.html" class="cta-button" target="_blank" rel="noopener noreferrer">Get Involved</a>
+</div>
+
+<!-- Styles -->
+<style>
+.vision-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px 20px;
+  background: rgba(0,166,126,0.12);
+  border-radius: 16px;
+  border: 1px solid rgba(0,166,126,0.25);
+  backdrop-filter: blur(6px);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 30px rgba(0,166,126,0.1);
+}
+
+.cta-title {
+  font-size: 1.8rem;
+  color: #00a67e;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.vision-cta p {
+  font-size: 1rem;
+  color: #e9f7f3;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #00a67e;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  color: #00a67e;
+  box-shadow: 0 5px 15px rgba(0,166,126,0.4);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .cta-title { font-size: 1.5rem; }
+  .vision-cta p { font-size: 0.95rem; }
+  .cta-button { font-size: 0.95rem; padding: 10px 25px; }
+}
+</style>
+
+  <!-- Our Mission Section with Video Background -->
+<section class="mission-section">
+  <video class="mission-video-bg" autoplay muted loop playsinline>
+    <source src="vd/develop%20(3).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="mission-overlay"></div>
+
+  <div class="mission-container">
+    <h2 class="mission-title">Our Mission</h2>
+
+    <div class="mission-card">
+      <p>
+        Founded in <strong>2023</strong> under the guidance and management of
+        <a href="https://github.com/Anonmad/" target="_blank" rel="noopener noreferrer"><strong>Anonmad Network</strong></a>, our mission is to expand the reach of
+        modern technology across East Africa and beyond. We were established
+        with a vision to empower communities through innovation, digital
+        transformation, and intelligent web solutions that bring Africa closer
+        to the global tech frontier.
+      </p>
+
+      <p>
+        Since our inception, we’ve grown into a dynamic digital ecosystem —
+        nurturing multiple online platforms, creative web projects, and our
+        very own AI innovation known as <a href="https://bongo.ai" target="_blank" rel="noopener noreferrer">Bongo.Ai</a>.
+        Through passion, research, and modern development, we continue to
+        pioneer the future of technology, shaping smart tools and digital
+        experiences that reflect the spirit and creativity of Africa.
+      </p>
+      <!-- Read More Button (Updated z-index) -->
+<a href="about.html" class="readmore-btn" target="_blank" rel="noopener noreferrer">Read More</a>
+
+<style>
+.readmore-btn {
+  position: relative; /* crucial for stacking above overlays */
+  z-index: 10; /* make sure it's above video/overlay */
+  display: inline-block;
+  background-color: #ffffff;
+  color: #00a67e;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,166,126,0.3);
+}
+
+.readmore-btn:hover {
+  background-color: #00a67e;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,166,126,0.5);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .readmore-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+}
+</style>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+:root{
+  --accent: #00a67e;
+}
+
+.mission-section{
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.mission-video-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.45) contrast(1.1);
+}
+
+.mission-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,166,126,0.15), rgba(0,0,0,0.5));
+  z-index: 2;
+}
+
+.mission-container{
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.mission-title{
+  font-size: 2rem;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mission-card{
+  background: rgba(3,6,8,0.45);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(2,6,10,0.6);
+}
+
+.mission-card p{
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  color: #e9f7f3;
+  font-size: 1.03rem;
+}
+
+.mission-card p strong{
+  color: var(--accent);
+}
+
+.mission-card a{
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mission-card a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 720px){
+  .mission-section{ padding: 48px 16px; }
+  .mission-title{ font-size: 1.5rem; }
+  .mission-card{ padding: 20px; }
+  .mission-card p{ font-size: 0.98rem; }
+}
+</style>
+
 
   <!-- FOOTER SECTION -->
 <footer class="footer">
@@ -121,9 +651,9 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="https://anonmad.github.io/bongo.ai/">bongo.ChatGpt</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
@@ -142,7 +672,7 @@
     <div class="footer-col">
       <h4>Follow Us</h4>
       <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1BDzToVFAG/"><i class="fab fa-facebook-f"></i></a>
         <a href="https://t.me/addlist/kmMW8Emuw9YzNTM0"><i class="fab fa-telegram"></i></a>
         <a href="https://wa.me/message/SODIKJBXAM7XL1?src=qr"><i class="fab fa-whatsapp"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
@@ -153,7 +683,7 @@
 
   <!-- Bottom bar -->
   <div class="footer-bottom">
-    <p><b>© 2025 Anonmad Network Tanzania.</b> <i>All Rights Reserved.</i></p>
+    <p><b>© 2023 - 2025 Anonmad Network Tanzania.</b> <i>All Rights Reserved.</i></p>
     <p>Designed with ❤️ by <a href="https://github.com/Anonmad/">Anonmad_Tech.</a></p>
   </div>
 </footer>
